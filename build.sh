@@ -2,20 +2,19 @@
 
 # Just a basic script U can improvise lateron asper ur need xD 
 
-MANIFEST="git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11"
-DEVICE=phoenix
-DT_LINK="https://github.com/hraj9258/twrp_phoenix -b a11"
-DT_PATH=device/xiaomi/$DEVICE
+MANIFEST="git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-10.0"
+DEVICE=CD6
+DT_LINK="https://github.com/mastersenpai05/android_device_TECNO_CD6-pbrp.git"
+DT_PATH=device/TECNO/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
 apt update --fix-missing
 apt install openssh-server -y
-mkdir ~/twrp11 && cd ~/twrp11
+mkdir ~/twrp10 && cd ~/twrp10
 
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
-repo sync
 repo sync
 git clone --depth=1 $DT_LINK $DT_PATH
 
