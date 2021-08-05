@@ -22,8 +22,7 @@ echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
 export TW_THEME=portrait_hdpi
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch omni_${DEVICE}-eng || abort " lunch failed with exit status $?"
-mka recoveryimage || abort " mka failed with exit status $?"
+lunch omni_${DEVICE}-eng && mka recoveryimage
 
 # Upload zips & recovery.img (U can improvise lateron adding telegram support etc etc)
 echo " ===+++ Uploading Recovery +++==="
