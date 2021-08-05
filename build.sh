@@ -16,11 +16,11 @@ mkdir ~/twrp10 && cd ~/twrp10
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
 repo sync
-repo sync
 git clone --depth=1 $DT_LINK $DT_PATH
 
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
+export TW_THEME=portrait_hdpi
 export ALLOW_MISSING_DEPENDENCIES=true
 lunch omni_${DEVICE}-eng || abort " lunch failed with exit status $?"
 mka recoveryimage || abort " mka failed with exit status $?"
