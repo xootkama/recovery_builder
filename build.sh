@@ -4,14 +4,14 @@
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni -b twrp-9.0"
 DEVICE=X00T
-DT_LINK="https://github.com/mastersenpai05/recovery_device_asus_X00T_twrp -b test"
+DT_LINK="https://github.com/mastersenpai05/recovery_device_asus_X00T_twrp"
 DT_PATH=device/asus/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
 apt update --fix-missing
 apt install openssh-server -y
-mkdir ~/twrp10 && cd ~/twrp10
+mkdir ~/twrp && cd ~/twrp
 
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
