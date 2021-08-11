@@ -2,10 +2,10 @@
 
 # Just a basic script U can improvise lateron asper ur need xD 
 
-MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni -b twrp-10.0"
-DEVICE=A7_Pro
-DT_LINK="https://github.com/mastersenpai05/twrp_device_umidigi_A7_Pro -b test"
-DT_PATH=device/umidigi/$DEVICE
+MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni -b twrp-9.0"
+DEVICE=X00T
+DT_LINK="https://github.com/mastersenpai05/recovery_device_asus_X00T_twrp -b test"
+DT_PATH=device/asus/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
@@ -20,7 +20,6 @@ git clone --depth=1 $DT_LINK $DT_PATH
 
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
-export TW_THEME=portrait_hdpi
 export ALLOW_MISSING_DEPENDENCIES=true
 lunch omni_${DEVICE}-eng && mka recoveryimage
 
