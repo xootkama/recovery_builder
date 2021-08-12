@@ -3,9 +3,9 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni -b twrp-9.0"
-DEVICE=X00T
-DT_LINK="https://github.com/mastersenpai05/recovery_device_asus_X00T_twrp"
-DT_PATH=device/asus/$DEVICE
+DEVICE=angelicain
+DT_LINK="https://github.com/mastersenpai05/twrp_device_xiaomi_angelicain"
+DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
