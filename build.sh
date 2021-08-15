@@ -2,9 +2,9 @@
 
 # Just a basic script U can improvise lateron asper ur need xD 
 
-MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni -b twrp-10.0"
-DEVICE=angelicain
-DT_LINK="https://github.com/mastersenpai05/twrp_device_xiaomi_angelicain"
+MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git"
+DEVICE=star
+DT_LINK="https://github.com/mastersenpai05/device_xiaomi_star_twrp"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
@@ -15,6 +15,7 @@ mkdir ~/twrp && cd ~/twrp
 
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
+repo sync
 repo sync
 git clone --depth=1 $DT_LINK $DT_PATH
 
