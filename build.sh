@@ -3,10 +3,8 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git"
-KT_LINK="https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git"
-KT_PATH=kernel/xiaomi/$DEVICE
-DEVICE=star
-DT_LINK="https://github.com/mastersenpai05/device_xiaomi_star_twrp"
+DEVICE=juice
+DT_LINK="https://github.com/mastersenpai05/twrp_device_xiaomi_juice -b android-11.0"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
