@@ -3,8 +3,8 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git"
-DEVICE=ares
-DT_LINK="https://github.com/mastersenpai05/test_device_xiaomi_ares"
+DEVICE=star
+DT_LINK="https://github.com/mastersenpai05/device_xiaomi_star_twrp"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
@@ -21,7 +21,7 @@ git clone --depth=1 $DT_LINK $DT_PATH
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch twrp_${DEVICE}-eng && mka recoveryimage
+lunch twrp_${DEVICE}-eng && mka bootimage
 
 # Upload zips & recovery.img
 echo " ===+++ Uploading Recovery +++==="
