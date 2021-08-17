@@ -1,7 +1,9 @@
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git"
 DEVICE=star
-DT_LINK="https://github.com/mastersenpai05/device_xiaomi_star_twrp"
+DT_LINK="https://github.com/mastersenpai05/twrp_device_xiaomi_star"
 DT_PATH=device/xiaomi/$DEVICE
+KT_LINK="https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git"
+KT_PATH=kernel/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
@@ -13,6 +15,7 @@ echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
 repo sync
 git clone --depth=1 $DT_LINK $DT_PATH
+git clone --depth=1 $KT_LINK $KT_PATH
 
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
