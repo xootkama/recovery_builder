@@ -21,6 +21,7 @@ lunch twrp_${DEVICE}-eng && mka bootimage
 
 # Upload zips & recovery.img
 echo " ===+++ Uploading Recovery +++==="
+cd out/target/product/$DEVICE
 version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d \" -f2)
 OUTFILE=TWRP-${version}-${DEVICE}-$(date "+%Y%m%d-%I%M").zip
 
