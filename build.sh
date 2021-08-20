@@ -2,7 +2,7 @@
 
 # Just a basic script U can improvise lateron asper ur need xD 
 
-MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git"
+MANIFEST="https://github.com/SHRP/platform_manifest_twrp_omni -b v3_10.0"
 DEVICE=E7746
 DT_LINK="https://github.com/mastersenpai05/twrp_micromax_E7746"
 DT_PATH=device/micromax/$DEVICE
@@ -26,10 +26,10 @@ lunch omni_${DEVICE}-eng && mka recoveryimage
 # Upload zips & recovery.img (U can improvise lateron adding telegram support etc etc)
 echo " ===+++ Uploading Recovery +++==="
 cd out/target/product/$DEVICE
-version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d \" -f2)
-OUTFILE=TWRP-${version}-${DEVICE}-$(date "+%Y%m%d-%I%M").zip
-mv boot.img ${OUTFILE%.zip}.img
-zip -r9 $OUTFILE ${OUTFILE%.zip}.img
+#version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d \" -f2)
+#OUTFILE=TWRP-${version}-${DEVICE}-$(date "+%Y%m%d-%I%M").zip
+#mv boot.img ${OUTFILE%.zip}.img
+#zip -r9 $OUTFILE ${OUTFILE%.zip}.img
 
 #curl -T $OUTFILE https://oshi.at
 curl -sL $OUTFILE https://git.io/file-transfer | sh
