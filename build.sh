@@ -17,8 +17,8 @@ ls
 
 # Upload zips & recovery.img
 echo " ===+++ Uploading Recovery +++==="
-zip -r9 $OUTFILE ${OUTFILE%.zip}.img
+#zip -r9 $OUTFILE ${OUTFILE%.zip}.img
 
 #curl -T $OUTFILE https://oshi.at
-curl -sL $OUTFILE https://git.io/file-transfer | sh
-./transfer wet *.zip
+#curl -sL $OUTFILE https://git.io/file-transfer | sh
+#./transfer wet *.zip
