@@ -1,6 +1,6 @@
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git"
-DEVICE=star
-DT_LINK="https://github.com/mastersenpai05/device_xiaomi_star_twrp"
+DEVICE=haydn
+DT_LINK="https://github.com/mastersenpai05/twrp_haydn"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
