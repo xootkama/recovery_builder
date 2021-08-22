@@ -11,13 +11,12 @@ mkdir ~/twrp && cd ~/twrp
 
 echo " ===+++ Syncing Recovery Sources +++==="
 wget http://download939.mediafire.com/pqmvbjk59gkg/m81fk38cgxflau2/Infinix_Hot_10S_X689B_MT6768_V181_210326.zip
-unzip x Infinix_Hot_10S_X689B_MT6768_V181_210326.zip
+unzip -l *.zip
 cd Infinix_Hot_10S_X689B_MT6768_V181_210326
 ls
 
 # Upload zips & recovery.img
 echo " ===+++ Uploading Recovery +++==="
-mv boot.img ${OUTFILE%.zip}.img
 zip -r9 $OUTFILE ${OUTFILE%.zip}.img
 
 #curl -T $OUTFILE https://oshi.at
