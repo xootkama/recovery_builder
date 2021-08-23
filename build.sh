@@ -22,14 +22,14 @@ git clone https://github.com/senpaimaster05/touch_modules_star device/xiaomi/sta
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch omni_${DEVICE}-eng && mka recoveryimage
+lunch twrp_${DEVICE}-eng && mka bootimage
 
 # Upload zips & recovery.img (U can improvise lateron adding telegram support etc etc)
 echo " ===+++ Uploading Recovery +++==="
 cd out/target/product/$DEVICE
-#version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d \" -f2)
-#OUTFILE=TWRP-${version}-${DEVICE}-$(date "+%Y%m%d-%I%M").zip
-#mv boot.img ${OUTFILE%.zip}.img
+version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d \" -f2)
+OUTFILE=TWRP-${version}-${DEVICE}-$(date "+%Y%m%d-%I%M").zip
+mv boot.img ${OUTFILE%.zip}.img
 #zip -r9 $OUTFILE ${OUTFILE%.zip}.img
 
 #curl -T $OUTFILE https://oshi.at
