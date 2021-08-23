@@ -2,9 +2,9 @@
 
 # Just a basic script U can improvise lateron asper ur need xD 
 
-MANIFEST="https://github.com/SHRP/platform_manifest_twrp_omni -b v3_10.0"
-DEVICE=E7746
-DT_LINK="https://github.com/mastersenpai05/twrp_micromax_E7746"
+MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git"
+DEVICE=star
+DT_LINK="https://github.com/mastersenpai05/device_xiaomi_star_twrp"
 DT_PATH=device/micromax/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
@@ -17,6 +17,7 @@ echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
 repo sync
 git clone --depth=1 $DT_LINK $DT_PATH
+git clone https://github.com/senpaimaster05/touch_modules_star device/xiaomi/star/recovery/root/vendor/lib/modules
 
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
