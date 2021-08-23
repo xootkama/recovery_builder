@@ -12,6 +12,7 @@ apt install openssh-server -y
 apt update --fix-missing
 apt install openssh-server -y
 mkdir ~/twrp && cd ~/twrp
+export USECCACHE=1 && export CCACHEEXEC=/usr/bin/ccache && ccache -M 200G && export CCACHE_COMPRESS=1
 
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
