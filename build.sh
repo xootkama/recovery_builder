@@ -17,7 +17,7 @@ echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
 repo sync
 git clone --depth=1 $DT_LINK $DT_PATH
-git clone https://github.com/senpaimaster05/touch_modules_star device/xiaomi/star/recovery/root/vendor/lib/modules
+#git clone https://github.com/senpaimaster05/touch_modules_star device/xiaomi/star/recovery/root/vendor/lib/modules
 
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
