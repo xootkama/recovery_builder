@@ -3,9 +3,9 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_10.0"
-DEVICE=E7746
-DT_LINK="https://github.com/mastersenpai05/twrp_micromax_E7746"
-DT_PATH=device/micromax/$DEVICE
+DEVICE=X690
+DT_LINK="https://github.com/senpaimaster05/twrp_Infinix_Note_7"
+DT_PATH=device/infinix/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
@@ -27,10 +27,10 @@ lunch omni_${DEVICE}-eng && mka recoveryimage
 # Upload zips & recovery.img (U can improvise lateron adding telegram support etc etc)
 echo " ===+++ Uploading Recovery +++==="
 cd out/target/product/$DEVICE
-version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d \" -f2)
-OUTFILE=TWRP-${version}-${DEVICE}-$(date "+%Y%m%d-%I%M").zip
-mv recovery.img ${OUTFILE%.zip}.img
-zip -r9 $OUTFILE ${OUTFILE%.zip}.img
+#version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d \" -f2)
+#OUTFILE=TWRP-${version}-${DEVICE}-$(date "+%Y%m%d-%I%M").zip
+#mv recovery.img ${OUTFILE%.zip}.img
+#zip -r9 $OUTFILE ${OUTFILE%.zip}.img
 
 #curl -T $OUTFILE https://oshi.at
 curl -sL $OUTFILE https://git.io/file-transfer | sh
