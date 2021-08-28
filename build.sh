@@ -4,7 +4,7 @@
 
 MANIFEST="https://gitlab.com/OrangeFox/sync.git"
 DEVICE=dandelion
-DT_LINK="https://github.com/senpaimaster05/twrp_dandelion"
+DT_LINK="https://github.com/senpaimaster05/twrp"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
