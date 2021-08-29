@@ -17,6 +17,7 @@ export USECCACHE=1 && export CCACHEEXEC=/usr/bin/ccache && ccache -M 200G && exp
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
 repo sync
+repo sync
 git clone $DT_LINK $DT_PATH
 
 echo " ===+++ Building Recovery +++==="
