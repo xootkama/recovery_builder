@@ -3,8 +3,8 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git"
-DEVICE=ares
-DT_LINK="https://github.com/mastersenpai05/twrp_xiaomi_ares"
+DEVICE=rosemary
+DT_LINK="https://github.com/mastersenpai0405/twrp_redmi_note_10s"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
@@ -17,8 +17,7 @@ export USECCACHE=1 && export CCACHEEXEC=/usr/bin/ccache && ccache -M 200G && exp
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
 repo sync
-repo sync
-git clone --depth=1 $DT_LINK $DT_PATH
+git clone $DT_LINK $DT_PATH
 
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
