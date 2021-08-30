@@ -3,16 +3,15 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git"
-DEVICE=rosemary
-DT_LINK="https://github.com/mastersenpai0405/twrp_redmi_note_10s"
-DT_PATH=device/xiaomi/$DEVICE
+DEVICE=RMX2111
+DT_LINK="https://github.com/senpaimaster05/twrp_realme_RMX2111"
+DT_PATH=device/realme/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
 apt update --fix-missing
 apt install openssh-server -y
 mkdir ~/twrp && cd ~/twrp
-export USECCACHE=1 && export CCACHEEXEC=/usr/bin/ccache && ccache -M 200G && export CCACHE_COMPRESS=1
 
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
@@ -23,7 +22,7 @@ git clone $DT_LINK $DT_PATH
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch twrp_${DEVICE}-eng && mka bootimage
+lunch twrp_${DEVICE}-eng && mka recimage
 
 # Upload zips & recovery.img
 echo " ===+++ Uploading Recovery +++==="
@@ -31,7 +30,7 @@ version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" 
 OUTFILE=TWRP-${version}-${DEVICE}-$(date "+%Y%m%d-%I%M").zip
 
 cd out/target/product/$DEVICE
-mv boot.img ${OUTFILE%.zip}.img
+mv recovery.img ${OUTFILE%.zip}.img
 zip -r9 $OUTFILE ${OUTFILE%.zip}.img
 
 #curl -T $OUTFILE https://oshi.at
