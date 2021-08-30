@@ -22,7 +22,7 @@ git clone $DT_LINK $DT_PATH
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch twrp_${DEVICE}-eng && mka recimage
+lunch twrp_${DEVICE}-eng && mka recoveryimage
 
 # Upload zips & recovery.img
 echo " ===+++ Uploading Recovery +++==="
