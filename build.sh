@@ -3,8 +3,8 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni"
-DEVICE=RMX2111
-DT_LINK="https://github.com/senpaimaster05/twrp_realme_RMX2111 -b android-10.0"
+DEVICE=RMX2121
+DT_LINK="https://github.com/mastersenpai0405/twrp_device_realme_rmx2121 -b android-10.0"
 DT_PATH=device/realme/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
