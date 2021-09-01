@@ -4,7 +4,7 @@
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni"
 DEVICE=RMX3092
-DT_LINK="https://github.com/mastersenpai0405/twrp_device_realme_rmx2121 -b RMX3092_10.0"
+DT_LINK="https://github.com/mastersenpai0405/TWRP_Realme_RMX2111_7_5G -b RMX3092_10.0"
 DT_PATH=device/realme/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
