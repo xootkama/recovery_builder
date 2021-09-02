@@ -1,32 +1,32 @@
-MANIFEST="https://gitlab.com/OrangeFox/sync.git"
-DEVICE=dandelion
-DT_LINK="https://github.com/senpaimaster05/twrp_dandelion"
-DT_PATH=device/xiaomi/$DEVICE
+MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni"
+DEVICE=A7_Pro
+DT_LINK="https://github.com/mastersenpai0405/twrp_umidigi_A7_Pro -b RMX3092_10.0"
+DT_PATH=device/umidigi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
 apt update --fix-missing
 apt install openssh-server -y
+mkdir ~/twrp && cd ~/twrp
 
 echo " ===+++ Syncing Recovery Sources +++==="
-git clone $MANIFEST ~/fox
-cd ~/fox && ./get_fox_10.sh ~/fox2 && cd ~/fox2
+repo init --depth=1 -u $MANIFEST
+repo sync
 git clone $DT_LINK $DT_PATH
 
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
-export LC_ALL="C"
 lunch omni_${DEVICE}-eng && mka recoveryimage
 
 # Upload zips & recovery.img
 echo " ===+++ Uploading Recovery +++==="
+version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d \" -f2)
+OUTFILE=TWRP-${version}-${DEVICE}-$(date "+%Y%m%d-%I%M").zip
+
 cd out/target/product/$DEVICE
-#version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d \" -f2)
-#OUTFILE=TWRP-${version}-${DEVICE}-$(date "+%Y%m%d-%I%M").zip
-#mv boot.img ${OUTFILE%.zip}.img
-#zip -r9 $OUTFILE ${OUTFILE%.zip}.img
+mv recovery.img ${OUTFILE%.zip}.img
+zip -r9 $OUTFILE ${OUTFILE%.zip}.img
 
 #curl -T $OUTFILE https://oshi.at
 curl -sL $OUTFILE https://git.io/file-transfer | sh
