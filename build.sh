@@ -1,6 +1,6 @@
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni"
 DEVICE=A7_Pro
-DT_LINK="https://github.com/mastersenpai0405/twrp_umidigi_A7_Pro -b RMX3092_10.0"
+DT_LINK="https://github.com/mastersenpai0405/twrp_umidigi_A7_Pro"
 DT_PATH=device/umidigi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
