@@ -3,8 +3,8 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni"
-DEVICE=RMX3092
-DT_LINK="https://github.com/mastersenpai0405/TWRP_Realme_RMX2111_7_5G -b RMX3092_10.0"
+DEVICE=RMX2111
+DT_LINK="https://github.com/mastersenpai0405/TWRP_Realme_RMX2111_7_5G"
 DT_PATH=device/realme/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
@@ -16,12 +16,13 @@ mkdir ~/twrp && cd ~/twrp
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
 repo sync
+repo sync
 git clone $DT_LINK $DT_PATH
 
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch omni_${DEVICE}-eng && mka recoveryimage
+lunch twrp_${DEVICE}-eng && mka recoveryimage
 
 # Upload zips & recovery.img
 echo " ===+++ Uploading Recovery +++==="
