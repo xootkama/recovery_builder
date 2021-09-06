@@ -5,7 +5,7 @@
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
 DEVICE=star
 DT_LINK="https://github.com/mastersenpai05/twrp_device_xiaomi_star -b test"
-DT_PATH=device/realme/$DEVICE
+DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
