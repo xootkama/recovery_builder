@@ -1,7 +1,7 @@
-MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni"
-DEVICE=A7_Pro
-DT_LINK="https://github.com/mastersenpai0405/twrp_umidigi_A7_Pro"
-DT_PATH=device/umidigi/$DEVICE
+MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
+DEVICE=PCLM10
+DT_LINK="https://github.com/mastersenpai0405/android_device_oppo_PCLM10"
+DT_PATH=device/oppo/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
@@ -12,12 +12,13 @@ mkdir ~/twrp && cd ~/twrp
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
 repo sync
+repo sync
 git clone $DT_LINK $DT_PATH
 
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch omni_${DEVICE}-eng && mka recoveryimage
+lunch twrp_${DEVICE}-eng && mka recoveryimage
 
 # Upload zips & recovery.img
 echo " ===+++ Uploading Recovery +++==="
