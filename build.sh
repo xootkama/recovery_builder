@@ -1,6 +1,6 @@
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
-DEVICE=star
-DT_LINK="https://github.com/mastersenpai0405/android_device_oppo_PCLM10"
+DEVICE=juice
+DT_LINK="https://github.com/mastersenpai05/twrp_device_xiaomi_juice -b test_11.0"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
@@ -18,7 +18,7 @@ git clone $DT_LINK $DT_PATH
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch twrp_${DEVICE}-eng && mka bootimage
+lunch twrp_${DEVICE}-eng && mka recoveryimage
 wget https://dumps.tadiphone.dev/dumps/xiaomi/mars/-/raw/missi-user-11-RKQ1.201112.002-21.6.30-release-keys/twrp-device-tree/xiaomi/star/prebuilt/Image.gz-dtb device/xiaomi/star/prebuilt
 
 # Upload zips & recovery.img
@@ -27,7 +27,7 @@ version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" 
 OUTFILE=TWRP-${version}-${DEVICE}-$(date "+%Y%m%d-%I%M").zip
 
 cd out/target/product/$DEVICE
-mv boot.img ${OUTFILE%.zip}.img
+mv recovery.img ${OUTFILE%.zip}.img
 zip -r9 $OUTFILE ${OUTFILE%.zip}.img
 
 #curl -T $OUTFILE https://oshi.at
