@@ -3,8 +3,8 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
-DEVICE=ares
-DT_LINK="https://github.com/mastersenpai05/twrp_xiaomi_ares -b test"
+DEVICE=star
+DT_LINK="https://github.com/mastersenpai05/twrp_device_xiaomi_star -b test"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
@@ -18,7 +18,6 @@ repo init --depth=1 -u $MANIFEST
 repo sync
 repo sync
 git clone $DT_LINK $DT_PATH
-#wget https://dumps.tadiphone.dev/dumps/xiaomi/mars/-/raw/missi-user-11-RKQ1.201112.002-21.6.30-release-keys/twrp-device-tree/xiaomi/star/prebuilt/Image.gz-dtb device/xiaomi/star/prebuilt
 
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
