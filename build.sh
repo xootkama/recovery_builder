@@ -19,7 +19,6 @@ echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 lunch twrp_${DEVICE}-eng && mka recoveryimage
-wget https://dumps.tadiphone.dev/dumps/xiaomi/mars/-/raw/missi-user-11-RKQ1.201112.002-21.6.30-release-keys/twrp-device-tree/xiaomi/star/prebuilt/Image.gz-dtb device/xiaomi/star/prebuilt
 
 # Upload zips & recovery.img
 echo " ===+++ Uploading Recovery +++==="
