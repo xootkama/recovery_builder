@@ -2,7 +2,7 @@
 
 # Just a basic script U can improvise lateron asper ur need xD 
 
-MANIFEST="https://github.com/PitchBlackRecoveryProject/manifest_pb -b android-11.0"
+MANIFEST="https://github.com/PitchBlackRecoveryProject/manifest_pb -b android-10.0"
 DEVICE=RMX1941
 DT_LINK="https://github.com/mastersenpai0405/android_device_realme_RMX1941-pbrp"
 DT_PATH=device/realme/$DEVICE
