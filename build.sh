@@ -1,7 +1,7 @@
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
-DEVICE=juice
-DT_LINK="https://github.com/mastersenpai05/twrp_device_xiaomi_juice -b test_11.0"
-DT_PATH=device/xiaomi/$DEVICE
+DEVICE=RMX2111
+DT_LINK="https://github.com/mastersenpai0405/TWRP_Realme_RMX2111_7_5G"
+DT_PATH=device/realme/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
@@ -18,7 +18,7 @@ git clone $DT_LINK $DT_PATH
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch twrp_${DEVICE}-eng && mka recoveryimage
+lunch twrp_${DEVICE}-eng && make recoveryimage
 
 # Upload zips & recovery.img
 echo " ===+++ Uploading Recovery +++==="
