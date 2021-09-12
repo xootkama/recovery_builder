@@ -1,4 +1,4 @@
-MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
+MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni"
 DEVICE=RMX2111
 DT_LINK="https://github.com/mastersenpai0405/TWRP_Realme_RMX2111_7_5G -b test_rui2"
 DT_PATH=device/realme/$DEVICE
