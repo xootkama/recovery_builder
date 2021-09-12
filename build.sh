@@ -2,10 +2,10 @@
 
 # Just a basic script U can improvise lateron asper ur need xD 
 
-MANIFEST="https://github.com/SHRP/platform_manifest_twrp_omni -b v3_10.0"
-DEVICE=E7746
-DT_LINK="https://github.com/mastersenpai0405/twrp_micromax_in_note_1"
-DT_PATH=device/micromax/$DEVICE
+MANIFEST="https://github.com/PitchBlackRecoveryProject/manifest_pb -b android-11.0"
+DEVICE=RMX1941
+DT_LINK="https://github.com/mastersenpai0405/android_device_realme_RMX1941-pbrp"
+DT_PATH=device/realme/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
