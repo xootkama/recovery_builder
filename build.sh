@@ -3,7 +3,7 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
-DEVICE=star
+DEVICE=ares
 DT_LINK="https://github.com/mastersenpai05/twrp_xiaomi_ares -b test"
 DT_PATH=device/xiaomi/$DEVICE
 
