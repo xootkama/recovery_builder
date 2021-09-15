@@ -1,6 +1,6 @@
-MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni"
-DEVICE=RMX2111
-DT_LINK="https://github.com/mastersenpai0405/TWRP_Realme_RMX2111_7_5G -b test_rui2"
+MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni twrp-9.0"
+DEVICE=RMX1941
+DT_LINK="https://github.com/mastersenpai0405/twrp_device_realme_RMX1941 -b android-9.0"
 DT_PATH=device/realme/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
@@ -11,7 +11,6 @@ mkdir ~/twrp && cd ~/twrp
 
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
-repo sync
 repo sync
 git clone $DT_LINK $DT_PATH
 
@@ -29,6 +28,5 @@ cd out/target/product/$DEVICE
 mv recovery.img ${OUTFILE%.zip}.img
 zip -r9 $OUTFILE ${OUTFILE%.zip}.img
 
-#curl -T $OUTFILE https://oshi.at
 curl -sL $OUTFILE https://git.io/file-transfer | sh
 ./transfer wet *.zip
