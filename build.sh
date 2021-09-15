@@ -1,4 +1,4 @@
-MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni twrp-9.0"
+MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni -b twrp-9.0"
 DEVICE=RMX1941
 DT_LINK="https://github.com/mastersenpai0405/twrp_device_realme_RMX1941 -b android-9.0"
 DT_PATH=device/realme/$DEVICE
