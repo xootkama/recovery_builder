@@ -3,11 +3,9 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
-DEVICE=star
-DT_LINK="https://github.com/mastersenpai0405/twrp_xiaomi_device_star"
+DEVICE=ares
+DT_LINK="https://github.com/mastersenpai05/twrp_xiaomi_ares -b android-11"
 DT_PATH=device/xiaomi/$DEVICE
-KT_LINK="https://github.com/MiCode/Xiaomi_Kernel_OpenSource -b star-r-oss"
-KT_PATH=kernel/xiaomi/star
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
@@ -20,7 +18,6 @@ repo init --depth=1 -u $MANIFEST
 repo sync
 repo sync
 git clone $DT_LINK $DT_PATH
-git clone $KT_LINK $KT_PATH
 
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
