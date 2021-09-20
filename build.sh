@@ -3,8 +3,8 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
-DEVICE=star
-DT_LINK="https://github.com/mastersenpai05/twrp_device_xiaomi_star -b android-11.0"
+DEVICE=lmi
+DT_LINK="https://github.com/KyuoFoxHuyu/android_device_xiaomi_lmi-ofrp -b twrp-11.0"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
@@ -15,8 +15,8 @@ mkdir ~/twrp && cd ~/twrp
 
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
-repo sync
-repo sync
+repo sync -j8
+repo sync -j8
 git clone $DT_LINK $DT_PATH
 
 echo " ===+++ Building Recovery +++==="
