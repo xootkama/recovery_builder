@@ -1,7 +1,7 @@
-MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni -b twrp-9.0"
-DEVICE=RMX1941
-DT_LINK="https://github.com/mastersenpai0405/twrp_device_realme_RMX1941 -b android-9.0"
-DT_PATH=device/realme/$DEVICE
+MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
+DEVICE=chopin
+DT_LINK="https://github.com/mastersenpai0405/twrp_device_xiaomi_chopin"
+DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
@@ -17,7 +17,7 @@ git clone $DT_LINK $DT_PATH
 echo " ===+++ Building Recovery +++==="
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch omni_${DEVICE}-eng && make recoveryimage
+lunch twrp_${DEVICE}-eng && mka bootimage
 
 # Upload zips & recovery.img
 echo " ===+++ Uploading Recovery +++==="
@@ -25,7 +25,7 @@ version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" 
 OUTFILE=TWRP-${version}-${DEVICE}-$(date "+%Y%m%d-%I%M").zip
 
 cd out/target/product/$DEVICE
-mv recovery.img ${OUTFILE%.zip}.img
+mv boot.img ${OUTFILE%.zip}.img
 zip -r9 $OUTFILE ${OUTFILE%.zip}.img
 
 curl -sL $OUTFILE https://git.io/file-transfer | sh
